@@ -1,0 +1,19 @@
+<div>
+        <button onClick={this.handledonneMoiUnSimpsonClick}>
+          Filtre les Simpson !
+        </button>
+        <div>
+          {this.state.quotes
+            .filter(
+              quote =>
+                !this.state.donneMoiUnSimpson ||
+                quote.character.includes("Simpson")
+            )
+            .map((quote, index) => <Quote {...quote} />)}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
